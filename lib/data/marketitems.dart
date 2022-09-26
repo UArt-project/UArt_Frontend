@@ -20,6 +20,10 @@ Future<List<MarketItemData>> GetMarketItems() async {
     Uri.parse(uri),
   );
 
+  if (request.statusCode != 200) {
+    throw Exception("Failed to get market items, code: ${request.statusCode}");
+  }
+
   data = jsonDecode(utf8.decode(request.bodyBytes));
 
   for (var i = 0; i < data["items"].length; i++) {
