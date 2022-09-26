@@ -11,7 +11,16 @@ class MarketItem extends StatelessWidget {
   Widget build(BuildContext context) {
     var fullWidth = MediaQuery.of(context).size.width / 4;
     Image image;
-    image = Image.asset('assets/images/imgnotfound.png');
+    if (photo != "") {
+      image = Image.network(
+        photo!,
+        width: fullWidth,
+        height: fullWidth,
+        fit: BoxFit.cover,
+      );
+    } else {
+      image = Image.asset('assets/images/imgnotfound.png');
+    }
 
     return Stack(
       children: <Widget>[
