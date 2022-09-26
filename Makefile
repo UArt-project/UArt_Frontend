@@ -6,7 +6,7 @@ docker-build:
 
 docker-run:
 	echo "Running on port 8888"
-	docker run -d -p 8888:80 --name uart-front uart-front
+	docker run -d -p 8888:80 --net uart_net --name uart-front uart-front
 
 docker-stop:
 	docker stop uart-front
@@ -15,6 +15,6 @@ docker-remove:
 	make docker-stop
 	docker rm uart-front
 
-docker-all:
+docker-deploy:
 	make docker-build
 	make docker-run

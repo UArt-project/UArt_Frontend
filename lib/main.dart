@@ -20,7 +20,7 @@ class UArt extends StatelessWidget {
       routes: {
         '/': (context) => const HomePage(),
         '/map': (context) => const MapPage(),
-        '/marketplace': (context) => const MarketplacePage(),
+        '/marketplace': (context) => MarketplacePage(),
       },
       initialRoute: '/',
     );
