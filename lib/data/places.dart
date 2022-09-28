@@ -14,15 +14,23 @@ List<Place> GetPlaces() {
     Place(
       '1',
       const LatLng(50.446667, 30.5125),
-      'Opera House',
-      'The National Opera of Ukraine is a national opera company in Kiev, Ukraine. It was founded in 1936 as the Kiev Opera House, and was renamed the National Opera of Ukraine in 1991.',
+      'Національна Опера',
+      'Самобутні інтерпретації класичної музичної спадщини і сучасних творів, виняткової злагодженості оркестр і хор, талановиті солісти, яскраві й самобутні виконавські традиції дозволили театру досягти мистецьких вершин і посісти важливе місце в сьогоденній музичній культурі Європи.',
     ),
     Place(
       '2',
       const LatLng(50.445, 30.518611),
-      'Lesya Ukrainka National Academic Theater',
-      'Lesya Ukrainka National Academic Theater is a theater in Kyiv, Ukraine. It is located in a building known as Bourgogne Theatre. Founded in 1926',
-    )
+      'Національний академічний драматичний театр імені Лесі Українки',
+      'Український театр у Києві, що займає приміщення колишнього театру Бергоньє',
+    ),
+    Place(
+      '3',
+      const LatLng(50.441696, 30.521141),
+      'ПінчукАртЦентр',
+      'PinchukArtCentre розташований в старовинному архітектурному ансамблі Бессарабського кварталу Києва це міжнародний центр сучасного мистецтва XXI сторіччя, відкрита платформа для митців, мистецтва та суспільства',
+    ),
+    Place('4', const LatLng(50.434167, 30.553333), 'Мистецький арсенал',
+        'Національний культурно-мистецький та музейний комплекс «Мистецький арсенал», відкритий у Києві у 2007. Один з найбільших у Європі')
   ];
 
   return places;
