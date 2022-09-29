@@ -2,18 +2,22 @@ local-run:
 	flutter run
 
 docker-build:
-	docker build -t uart-front .
+	docker build --no-cache -t uartweb/frontend .
 
 docker-run:
 	echo "Running on port 8888"
-	docker run --rm -d -p 8888:80 --net uart_net --name uart-front uart-front
+	docker run --rm -d -p 8888:80 --net uart_net --name uart-frontend uartweb/frontend
 
 docker-stop:
-	docker stop uart-front
+	docker stop uart-frontend
 
 docker-remove:
 	make docker-stop
-	docker rm uart-front
+	docker rm uart-frontend
+
+docker-push:
+	make docker-build
+	docker push uartweb/frontend:latest
 
 docker-deploy:
 	make docker-build
