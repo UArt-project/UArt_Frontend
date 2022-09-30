@@ -21,6 +21,7 @@ class UArt extends StatelessWidget {
         '/': (context) => const HomePage(),
         '/map': (context) => const MapPage(),
         '/marketplace': (context) => MarketplacePage(),
+        //'/auth': (context) => const AuthPage(),
       },
       initialRoute: '/',
     );
