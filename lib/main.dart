@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uart_frontend/screens/auth.dart';
 import 'package:uart_frontend/screens/home.dart';
 import 'package:uart_frontend/screens/map.dart';
 import 'package:uart_frontend/screens/marketplace.dart';
@@ -21,7 +22,7 @@ class UArt extends StatelessWidget {
         '/': (context) => const HomePage(),
         '/map': (context) => const MapPage(),
         '/marketplace': (context) => MarketplacePage(),
-        //'/auth': (context) => const AuthPage(),
+        '/auth': (context) => const AuthPage(),
       },
       initialRoute: '/',
     );

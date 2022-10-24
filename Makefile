@@ -1,5 +1,5 @@
 local-run:
-	flutter run
+	flutter run --web-port=8888
 
 docker-build:
 	docker build --no-cache -t uartweb/frontend .
