@@ -14,6 +14,10 @@ class MarketplacePage extends StatefulWidget {
 }
 
 class _MarketplacePageState extends State<MarketplacePage> {
+  static const int _itemsPerPage = 10;
+
+  int _currentPage = 0;
+
   refresh(newItems) {
     setState(() {
       widget._marketItems = newItems;
@@ -22,7 +26,7 @@ class _MarketplacePageState extends State<MarketplacePage> {
 
   @override
   Widget build(BuildContext context) {
-    GetMarketItems().then((value) {
+    GetMarketItems(_currentPage).then((value) {
       List<MarketItemData> itemData = value;
       var items = <MarketItem>[];
 
@@ -36,18 +40,37 @@ class _MarketplacePageState extends State<MarketplacePage> {
     return UArtPage(
       "UArt Marketplace",
       Center(
-        child: BootstrapContainer(
-          children: [
-            GridView.count(
-              crossAxisSpacing: 2,
-              mainAxisSpacing: 2,
-              crossAxisCount: 4,
-              children: <Widget>[
-                for (var item in widget._marketItems) item,
-              ],
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: BootstrapContainer(
+            fluid: true,
+            decoration: const BoxDecoration(color: Colors.blue),
+            children: <Widget>[
+              for (var item in widget._marketItems) item,
+            ],
+          ),
         ),
+      ),
+      Row(
+        children: <Widget>[
+          TextButton(
+            onPressed: () {
+              setState(() {
+                _currentPage = 0;
+                widget._marketItems = <MarketItem>[];
+              });
+            },
+            child: const Text('1'),
+          ),
+          TextButton(
+            onPressed: () {
+              setState(() {
+                _currentPage = 1;
+                widget._marketItems = <MarketItem>[];
+              });
+            },
+            child: const Text('2'),
+          ),
+        ],
       ),
     );
   }

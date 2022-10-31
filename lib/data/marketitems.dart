@@ -10,14 +10,14 @@ class MarketItemData {
   MarketItemData(this.photo, this.name, this.price);
 }
 
-const uri = "http://localhost:8000/v1/market/0";
+const uri = "http://localhost:8000/v1/market/";
 
-Future<List<MarketItemData>> GetMarketItems() async {
+Future<List<MarketItemData>> GetMarketItems(int page) async {
   // make http request to get market items
   List<MarketItemData> items = <MarketItemData>[];
   Map<String, dynamic> data;
   final request = await http.get(
-    Uri.parse(uri),
+    Uri.parse(uri + page.toString()),
   );
 
   if (request.statusCode != 200) {
